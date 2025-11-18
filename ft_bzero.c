@@ -6,7 +6,7 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 13:17:11 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/12 13:49:56 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/18 13:37:55 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_bzero(void *b, size_t len)
 	i = 0;
 	while (i < len)
 	{
-		((unsigned char *)b)[i] = '0';
+		((unsigned char *)b)[i] = 0;
 		i++;
 	}
 }

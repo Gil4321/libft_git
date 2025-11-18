@@ -6,16 +6,16 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 14:44:03 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/13 16:09:33 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/18 15:02:24 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	calc_len(int n)
+static size_t	calc_len(int n)
 {
-	size_t len;
-	unsigned int nb;
+	size_t			len;
+	unsigned int	nb;
 
 	len = 1;
 	if (n < 0)
@@ -33,12 +33,15 @@ size_t	calc_len(int n)
 	return (len);
 }
 
-void	fill_str(char *str, int n, size_t len)
+static void	fill_str(char *str, int n, size_t len)
 {
 	unsigned int	nb;
 
 	if (n < 0)
+	{
 		nb = n * -1;
+		str[0] = '-';
+	}
 	else
 		nb = n;
 	while (nb / 10 != 0)
@@ -48,13 +51,11 @@ void	fill_str(char *str, int n, size_t len)
 		nb = nb / 10;
 	}
 	str[len] = (nb % 10) + 48;
-	if (n < 0)
-		str[len - 1] = '-';
 }
 
-char    *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-    size_t	len;
+	size_t	len;
 	char	*str;
 
 	len = calc_len(n);

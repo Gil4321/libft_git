@@ -1,46 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/11 13:38:39 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/18 14:16:19 by adghouai         ###   ########lyon.fr   */
+/*   Created: 2025/11/13 16:26:53 by adghouai          #+#    #+#             */
+/*   Updated: 2025/11/18 15:31:58 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+/*char	function(unsigned int x, char c)
 {
-	size_t	i;
+	c = c + x;
+	return (c);
+}*/
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	size_t			len;
+	char			*str;
+	size_t			i;
 
 	i = 0;
-	if (dst > src)
+	len = ft_strlen(s);
+	str = malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
+		return (NULL);
+	while (s[i])
 	{
-		len--;
-		while (len >= 0)
-		{
-			((unsigned char *)dst)[len] = ((unsigned char *)src)[len];
-			len--;
-		}
+		str[i] = (*f)(i, (((char *)s)[i]));
+		i++;
 	}
-	else
-	{
-		while (i < len)
-		{
-			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-			i++;
-		}
-	}
+	str[i] = '\0';
+	return (str);
 }
 
 /*int	main(void)
 {
-	char	str[] = "abc";
-	char	str2[] = "cba";
+	char	*str;
+	char	(*ptr)(unsigned int, char);
 
-	ft_memmove(str, str2, 3);
+	ptr = &function;
+	str = ft_strmapi("chaine", ptr);
 	printf("%s", str);
 }*/

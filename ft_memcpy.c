@@ -6,18 +6,18 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 13:26:04 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/12 14:11:33 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/18 15:09:46 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t len)
+void	*ft_memcpy(void *dst, const void *src, size_t len)
 {
 	size_t	i;
 
 	i = 0;
-	while (len >= 0)
+	while (i < len)
 	{
 		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 		i++;

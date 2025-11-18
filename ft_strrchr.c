@@ -6,11 +6,11 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 16:45:42 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/12 14:47:24 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/18 15:53:16 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	char	*res;
 

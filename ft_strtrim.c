@@ -6,13 +6,13 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 18:41:42 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/12 19:04:51 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/18 16:02:54 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	in_charset(const char *set, const char c)
+static int	in_charset(const char *set, const char c)
 {
 	while (*set)
 	{
@@ -23,7 +23,7 @@ int	in_charset(const char *set, const char c)
 	return (0);
 }
 
-int	calc_str_len(char const *s1, char const *set)
+static int	calc_str_len(char const *s1, char const *set)
 {
 	int		i;
 	size_t	len;
@@ -42,11 +42,11 @@ int	calc_str_len(char const *s1, char const *set)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*result;
-	int		i;
+	size_t	i;
 	size_t	len;
 
 	len = calc_str_len(s1, set);
-	result = malloc((sizeof(char) * len) + 1);
+	result = malloc(sizeof(char) * (len + 1));
 	if (result == NULL)
 		return (NULL);
 	i = 0;

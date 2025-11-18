@@ -6,13 +6,13 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 17:23:14 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/12 14:08:37 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/18 15:08:38 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memchr(const void *b, int c, size_t len)
+void	*ft_memchr(const void *b, int c, size_t len)
 {
 	size_t	i;
 

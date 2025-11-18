@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 11:22:58 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/18 13:00:51 by adghouai         ###   ########lyon.fr   */
+/*   Created: 2025/11/14 11:18:16 by adghouai          #+#    #+#             */
+/*   Updated: 2025/11/14 11:45:56 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
-	int		negative;
-	int		result;
+	unsigned int	big_nb;
+	unsigned char	c;
 
-	i = 0;
-	negative = 1;
-	result = 0;
-	while ((nptr[i] >= '\t' && nptr[i] <= 'r') || nptr[i] == ' ')
-		i++;
-	if (nptr[i] == '+' || nptr[i] == '-')
+	if (n < 0)
 	{
-		if (nptr[i] == '-')
-			negative *= -1;
-		i++;
+		write(fd, "-", 1);
+		big_nb = n * -1;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-		result = (result * 10) + (nptr[i] - 48);
-	result *= negative;
-	return (result);
+	else
+		big_nb = n;
+	if (big_nb / 10 != 0)
+		ft_putnbr_fd((big_nb / 10), fd);
+	c = (big_nb % 10) + 48;
+	write(fd, &c, 1);
 }
+
+/*int	main(void)
+{
+	ft_putnbr_fd(2147483647, 1);
+}*/

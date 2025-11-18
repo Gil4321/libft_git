@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 11:22:58 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/18 13:00:51 by adghouai         ###   ########lyon.fr   */
+/*   Created: 2025/11/14 14:13:31 by adghouai          #+#    #+#             */
+/*   Updated: 2025/11/14 14:51:21 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	size_t	i;
-	int		negative;
-	int		result;
-
-	i = 0;
-	negative = 1;
-	result = 0;
-	while ((nptr[i] >= '\t' && nptr[i] <= 'r') || nptr[i] == ' ')
-		i++;
-	if (nptr[i] == '+' || nptr[i] == '-')
+	while ((*lst)->next)
 	{
-		if (nptr[i] == '-')
-			negative *= -1;
-		i++;
+		*lst = (*lst)->next;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-		result = (result * 10) + (nptr[i] - 48);
-	result *= negative;
-	return (result);
+	(*lst)->next = new;
 }
