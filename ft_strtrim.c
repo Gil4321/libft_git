@@ -6,7 +6,7 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 18:41:42 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/18 16:02:54 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/18 16:58:42 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	i;
 	size_t	len;
 
+	if (!(*s1))
+		return (NULL);
 	len = calc_str_len(s1, set);
 	result = malloc(sizeof(char) * (len + 1));
 	if (result == NULL)
