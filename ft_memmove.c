@@ -6,7 +6,7 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 13:38:39 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/18 14:16:19 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/19 16:34:46 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	size_t	i;
 
 	i = 0;
+	if (len <= 0)
+		return (dst);
+	if (!dst && !src)
+		return (dst);
 	if (dst > src)
 	{
-		len--;
-		while (len >= 0)
-		{
+		while (len-- > 0)
 			((unsigned char *)dst)[len] = ((unsigned char *)src)[len];
-			len--;
-		}
 	}
 	else
 	{
@@ -34,13 +34,5 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			i++;
 		}
 	}
+	return (dst);
 }
-
-/*int	main(void)
-{
-	char	str[] = "abc";
-	char	str2[] = "cba";
-
-	ft_memmove(str, str2, 3);
-	printf("%s", str);
-}*/

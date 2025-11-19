@@ -6,9 +6,11 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 11:21:31 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/18 13:11:46 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/19 11:03:26 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isalnum(int c)
 {

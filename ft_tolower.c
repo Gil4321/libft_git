@@ -6,12 +6,13 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 16:21:29 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/12 14:31:52 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/19 11:29:07 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
-	c += 32;
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
 	return (c);
 }

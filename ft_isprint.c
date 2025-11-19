@@ -6,13 +6,13 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 11:41:16 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/11 11:43:00 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/19 11:17:10 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	if ((c >= 32 && c <= 127))
+	if ((c >= 32 && c <= 126))
 		return (1);
 	return (0);
 }

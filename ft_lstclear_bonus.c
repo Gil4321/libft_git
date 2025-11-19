@@ -6,7 +6,7 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 15:03:02 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/18 15:03:05 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/19 11:10:05 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	while (*lst)
 	{
 		temp = (*lst)->next;
-		ft_lstdelone(*lst, &del);
+		ft_lstdelone(*lst, del);
 		*lst = temp;
 	}
 }

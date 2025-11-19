@@ -6,7 +6,7 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 14:28:12 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/18 14:37:28 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/19 14:46:37 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,18 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
+	size_t	len_src;
 	size_t	i;
 
 	i = 0;
-	while (i < size && src[i])
+	len_src = ft_strlen(src);
+	if (size < 1)
+		return (len_src);
+	while (i <= len_src && i < (size - 1))
 	{
 		dst[i] = src[i];
 		i++;
 	}
-	dst[i] = '\0';
-	i = 0;
-	while (src[i])
-		i++;
-	return (i);
+	dst[size - 1] = '\0';
+	return (len_src);
 }

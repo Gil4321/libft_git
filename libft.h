@@ -6,7 +6,7 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 12:46:15 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/18 16:26:30 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/19 12:46:46 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int					ft_strlen(const char *str);
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *b, size_t len);
 void				*ft_memcpy(void *dst, const void *src, size_t len);
-void				*memmove(void *dst, const void *src, size_t len);
+void				*ft_memmove(void *dst, const void *src, size_t len);
 size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 int					ft_toupper(int c);

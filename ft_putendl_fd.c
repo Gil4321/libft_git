@@ -6,7 +6,7 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 11:16:06 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/14 11:33:23 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/19 11:09:04 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ void	ft_putendl_fd(char *s, int fd)
 	{
 		write(fd, &s[i], 1);
 	}
-	write(fd, '\n', 1);
+	write(fd, "\n", 1);
 }
