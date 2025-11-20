@@ -6,7 +6,7 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 18:10:26 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/18 16:58:52 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/20 14:15:20 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*result;
 	size_t	count;
 
-	if (!(*s))
+	if (!s)
 		return (NULL);
 	count = 0;
 	result = malloc(sizeof(char) * (len + 1));

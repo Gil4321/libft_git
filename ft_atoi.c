@@ -6,7 +6,7 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 11:22:58 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/18 13:00:51 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/20 12:15:33 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_atoi(const char *nptr)
 	i = 0;
 	negative = 1;
 	result = 0;
-	while ((nptr[i] >= '\t' && nptr[i] <= 'r') || nptr[i] == ' ')
+	while ((nptr[i] >= '\t' && nptr[i] <= '\r') || nptr[i] == ' ')
 		i++;
 	if (nptr[i] == '+' || nptr[i] == '-')
 	{
@@ -30,7 +30,10 @@ int	ft_atoi(const char *nptr)
 		i++;
 	}
 	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
 		result = (result * 10) + (nptr[i] - 48);
+		i++;
+	}
 	result *= negative;
 	return (result);
 }

@@ -6,19 +6,39 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 16:22:15 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/12 14:12:31 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/20 17:09:57 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
+	size_t	i;
+
+	i = 0;
+	if (c == 0)
 	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
+		i = ft_strlen(s);
+		return (&((char *)s)[i]);
 	}
-	if (c == '\0')
-		return ((char *)s);
+	while (s[i])
+	{
+		if (s[i] == (char)c)
+			return (&((char *)s)[i]);
+		i++;
+	}
 	return (0);
 }
+
+/*#include <stdio.h>
+#include <string.h>
+
+int	main(void)
+{
+	char	str[] = "tripouille";
+	char	c = '\0';
+
+	printf("%p \n", ft_strchr(str, 't' + 256));
+	printf("%p", strchr(str, 't' + 256));
+}*/

@@ -6,7 +6,7 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 14:13:31 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/14 14:51:21 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/20 16:04:04 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,13 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	while ((*lst)->next)
-	{
-		*lst = (*lst)->next;
-	}
-	(*lst)->next = new;
+	t_list	*tmp;
+
+	if (!new)
+		return ;
+	tmp = ft_lstlast(*lst);
+	if (!tmp)
+		*lst = new;
+	else
+		tmp->next = new;
 }

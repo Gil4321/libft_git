@@ -6,7 +6,7 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 18:26:18 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/18 16:58:31 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/20 12:22:05 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*result;
 	size_t	len;
 
-	if (!(*s1) && !(*s2))
+	if (!s1 && !s2)
 		return (NULL);
 	len = ft_strlen(s1) + ft_strlen(s2);
 	result = malloc(sizeof(char) * (len + 1));

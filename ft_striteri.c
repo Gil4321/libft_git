@@ -6,7 +6,7 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 16:54:52 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/14 11:03:58 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/20 14:26:17 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 
 	i = 0;
 	while (s[i])
-		(*f)(i, (&s)[i]);
+	{
+		(*f)(i, &s[i]);
+		i++;
+	}
 }

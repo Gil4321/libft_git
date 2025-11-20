@@ -6,7 +6,7 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 11:11:15 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/14 11:34:49 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/20 14:07:31 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ void	ft_putstr_fd(char *s, int fd)
 	while (s[i])
 	{
 		write(fd, &s[i], 1);
+		i++;
 	}
 }
