@@ -6,17 +6,11 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 16:26:53 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/18 15:31:58 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/22 13:32:34 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/*char	function(unsigned int x, char c)
-{
-	c = c + x;
-	return (c);
-}*/
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -38,7 +32,13 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (str);
 }
 
-/*int	main(void)
+
+/*char	function(unsigned int x, char c)
+{
+	c = c + x;
+	return (c);
+}
+int	main(void)
 {
 	char	*str;
 	char	(*ptr)(unsigned int, char);

@@ -6,7 +6,7 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 17:23:14 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/18 15:08:38 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/21 12:07:53 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,20 @@ void	*ft_memchr(const void *b, int c, size_t len)
 	size_t	i;
 
 	i = 0;
-	while (((unsigned char *)b)[i] && i < len)
+	while (i < len)
 	{
 		if (((unsigned char *)b)[i] == (unsigned char)c)
 			return (&((void *)b)[i]);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
+
+/*#include <stdio.h>
+#include <string.h>
+int	main(void)
+{
+	char s[] = {0, 1, 2 ,3 ,4 ,5};
+	printf("%p \n", ft_memchr(s, 0, 1));
+	printf("%p", memchr(s, 0, 1));
+}*/

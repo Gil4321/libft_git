@@ -6,7 +6,7 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 12:03:20 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/18 14:45:32 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/21 16:42:45 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_calloc(size_t number, size_t size)
 
 	if (number == 0 || size == 0)
 	{
-		ptr = malloc(1);
+		ptr = malloc(0);
 		if (ptr == NULL)
 			return (NULL);
 		return (ptr);

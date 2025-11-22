@@ -6,7 +6,7 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 18:41:42 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/20 14:04:48 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/21 13:46:39 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,39 +23,27 @@ static int	in_charset(const char *set, const char c)
 	return (0);
 }
 
-static size_t	calc_start(char const *s1, char const *set)
+static int	calc_start(char const *s1, char const *set)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	if (in_charset(set, s1[i]))
-	{
+	while (in_charset(set, s1[i]))
 		i++;
-		while (in_charset(set, s1[i]))
-			i++;
-		return (i);
-	}
-	else
-		return (i);
+	return (i);
 }
 
-static size_t	calc_end(char const *s1, char const *set)
+static int	calc_end(char const *s1, char const *set)
 {
-	size_t	i;
+	int	i;
 
 	i = ft_strlen(s1) - 1;
-	if (in_charset(set, s1[i]) && i != 0)
-	{
+	while (in_charset(set, s1[i]) && i >= 0)
 		i--;
-		while (in_charset(set, s1[i]) && i != 0)
-			i--;
-		return (i);
-	}
-	else
-		return (i);
+	return (i);
 }
 
-static char	*new_str(char const *s1, size_t start, size_t end)
+static char	*new_str(char const *s1, int start, int end)
 {
 	size_t	i;
 	size_t	len;
@@ -65,8 +53,8 @@ static char	*new_str(char const *s1, size_t start, size_t end)
 	if (start > end)
 		len = 0;
 	else
-		len = end - start;
-	result = malloc(sizeof(char) * (len + 2));
+		len = end - start + 1;
+	result = malloc(sizeof(char) * (len + 1));
 	if (result == NULL)
 		return (NULL);
 	while (start <= end)
@@ -82,8 +70,8 @@ static char	*new_str(char const *s1, size_t start, size_t end)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*result;
-	size_t	start;
-	size_t	end;
+	int		start;
+	int		end;
 
 	if (!s1)
 		return (NULL);
@@ -93,7 +81,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (result);
 }
 
-/*int	main(void)
+/*#include <stdio.h>
+int	main(void)
 {
-	printf("%s", ft_strtrim("          ", " "));
+	char	*s;
+	s = ft_strtrim("", " x");
+	printf("%s", s);
 }*/

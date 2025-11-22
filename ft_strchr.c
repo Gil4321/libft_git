@@ -6,7 +6,7 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 16:22:15 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/20 17:09:57 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/21 11:06:01 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strchr(const char *s, int c)
 	size_t	i;
 
 	i = 0;
-	if (c == 0)
+	if ((char)c == '\0')
 	{
 		i = ft_strlen(s);
 		return (&((char *)s)[i]);

@@ -6,25 +6,22 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 19:05:34 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/20 14:09:43 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/21 18:06:43 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	tab_count(char const *s, char c)
+static size_t	tab_count(char const *s, char c)
 {
-	int	count;
+	size_t	count;
 
 	count = 0;
 	while (*s)
 	{
-		if (*s == c)
-		{
-			while (*s == c)
-				s++;
-		}
-		else
+		while (*s == c)
+			s++;
+		if (*s != c && *s)
 		{
 			count++;
 			while (*s != c && *s)
@@ -34,86 +31,54 @@ static int	tab_count(char const *s, char c)
 	return (count);
 }
 
-static int	allocate_subtab(char **big_tab, char const *s, char c)
+static int	fill_subtab(char **big_tab, char const *s, char c)
 {
-	size_t	word_len;
+	size_t	i;
+	size_t	j;
 
-	word_len = 0;
-	while (*s)
+	i = 0;
+	while (s[i])
 	{
-		if (*s == c)
+		j = 0;
+		while (s[i] == c)
+			i++;
+		while (s[i + j] != c && s[i + j])
+			j++;
+		if (j != 0)
 		{
-			while (*s == c)
-				s++;
-		}
-		else
-		{
-			while (*s != c && *s)
-			{
-				word_len++;
-				s++;
-			}
-			*big_tab = malloc(sizeof(char) * (word_len + 1));
-			if (*big_tab == NULL)
+			*big_tab = ft_substr(s, i, j);
+			if (!(*big_tab))
 				return (0);
-			word_len = 0;
 			big_tab++;
+			i += j;
 		}
 	}
 	return (1);
 }
 
-static void	fill_subtab(char **big_tab, char const *s, char c)
-{
-	int	i;
-
-	i = 0;
-	while (*s)
-	{
-		if (*s == c)
-		{
-			while (*s == c)
-				s++;
-		}
-		else
-		{
-			while (*s != c && *s)
-			{
-				(*big_tab)[i] = *s;
-				i++;
-				s++;
-			}
-			(*big_tab)[i] = '\0';
-			i = 0;
-			big_tab++;
-		}
-	}
-}
-
-static void	free_all(char **big_tab)
-{
-	while (*big_tab)
-		free(*big_tab);
-	free(big_tab);
-}
-
 char	**ft_split(char const *s, char c)
 {
 	char	**big_tab;
-	size_t	nb_tab;
+	size_t	nb_word;
+	size_t	i;
 
+	i = 0;
 	if (!s)
 		return (NULL);
-	nb_tab = tab_count(s, c);
-	big_tab = malloc(sizeof(char *) * (nb_tab + 1));
+	nb_word = tab_count(s, c);
+	big_tab = malloc(sizeof(char *) * (nb_word + 1));
 	if (big_tab == NULL)
 		return (NULL);
-	big_tab[nb_tab] = NULL;
-	if (!(allocate_subtab(big_tab, s, c)))
+	big_tab[nb_word] = NULL;
+	if (!(fill_subtab(big_tab, s, c)))
 	{
-		free_all(big_tab);
+		while (big_tab[i])
+		{
+			free(big_tab[i]);
+			i++;
+		}
+		free(big_tab);
 		return (NULL);
 	}
-	fill_subtab(big_tab, s, c);
 	return (big_tab);
 }

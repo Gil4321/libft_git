@@ -6,22 +6,39 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 16:45:42 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/20 16:25:35 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/21 17:18:08 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*res;
+	int	i;
+	int	res;
 
-	res = 0;
-	while (*s)
+	i = 0;
+	res = -1;
+	if ((char)c == '\0')
 	{
-		if (*s == c)
-			res = ((char *)s);
-		s++;
+		i = ft_strlen(s);
+		return ((char *)s + i);
 	}
-	if (c == '\0')
-		res = ((char *)s);
-	return (res);
+	while (s[i])
+	{
+		if (s[i] == (char)c)
+			res = i;
+		i++;
+	}
+	if (res != -1)
+		return ((char *)s + res);
+	else
+		return (0);
 }
+
+/*#include <stdio.h>
+int	main(void)
+{
+	char s[] = "tripouille";
+	printf("%s", ft_strrchr(s, 'z'));
+}*/
