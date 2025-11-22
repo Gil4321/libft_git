@@ -6,7 +6,7 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 18:41:42 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/21 13:46:39 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/22 14:42:05 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		start;
 	int		end;
 
-	if (!s1)
+	if (!s1 || !set)
 		return (NULL);
 	start = calc_start(s1, set);
 	end = calc_end(s1, set);
@@ -81,10 +81,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (result);
 }
 
-/*#include <stdio.h>
+/* #include <stdio.h>
 int	main(void)
 {
 	char	*s;
-	s = ft_strtrim("", " x");
+	s = ft_strtrim("", "");
 	printf("%s", s);
-}*/
+} */

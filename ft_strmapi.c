@@ -6,7 +6,7 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 16:26:53 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/22 13:32:34 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/22 14:44:15 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*str;
 	size_t			i;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	len = ft_strlen(s);
 	str = malloc(sizeof(char) * (len + 1));
@@ -31,7 +33,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
-
 
 /*char	function(unsigned int x, char c)
 {

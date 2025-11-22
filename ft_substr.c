@@ -6,7 +6,7 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 18:10:26 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/21 15:39:30 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/22 14:55:45 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	count;
 	size_t	len_s;
 
-	len_s = ft_strlen(s);
-	count = 0;
 	if (!s)
 		return (NULL);
+	len_s = ft_strlen(s);
+	count = 0;
 	if (start >= len_s)
 	{
 		len = 0;
@@ -41,9 +41,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (result);
 }
 
-/*#include <stdio.h>
+/* #include <stdio.h>
 
 int	main(void)
 {
-	ft_substr("hola", -1, 0);
-}*/
+	char	*s;
+	s = NULL;
+	ft_substr(s, 0, 0);
+} */

@@ -6,7 +6,7 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 19:05:34 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/21 18:06:43 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/22 14:42:47 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ char	**ft_split(char const *s, char c)
 	size_t	nb_word;
 	size_t	i;
 
-	i = 0;
 	if (!s)
 		return (NULL);
+	i = 0;
 	nb_word = tab_count(s, c);
 	big_tab = malloc(sizeof(char *) * (nb_word + 1));
 	if (big_tab == NULL)

@@ -6,7 +6,7 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 11:22:58 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/20 12:15:33 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/22 16:41:56 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,3 +37,9 @@ int	ft_atoi(const char *nptr)
 	result *= negative;
 	return (result);
 }
+
+/* #include <stdio.h>
+int	main(void)
+{
+	printf("%i", ft_atoi("-2147483648"));
+} */

@@ -6,7 +6,7 @@
 /*   By: adghouai <adghouai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 11:36:01 by adghouai          #+#    #+#             */
-/*   Updated: 2025/11/21 16:34:04 by adghouai         ###   ########lyon.fr   */
+/*   Updated: 2025/11/22 15:09:15 by adghouai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_list;
 	t_list	*tmp;
 
+	if (!f || !del)
+		return (NULL);
 	new_list = NULL;
 	while (lst)
 	{
